@@ -1,49 +1,48 @@
 package com.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.data.annotation.Id;
+import javax.persistence.*;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement
-@JsonIgnoreProperties(ignoreUnknown = true)
+@Entity
 public class Planet {
 
-    String First_UTC;
-    String Last_UTC;
-    int Month_ordinal;
-    String Northern_season;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    public String getFirst_UTC() {
-        return First_UTC;
+    private String planetName;
+    private String planetCode;
+
+    public Planet() {
     }
 
-    public void setFirst_UTC(String first_UTC) {
-        this.First_UTC = first_UTC;
+    public Planet(Long id, String planetName, String planetCode) {
+        this.id = id;
+        this.planetName = planetName;
+        this.planetCode = planetCode;
     }
 
-    public String getLast_UTC() {
-        return Last_UTC;
+    public Long getId() {
+        return id;
     }
 
-    public void setLast_UTC(String last_UTC) {
-        this.Last_UTC = last_UTC;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public int getMonth_ordinal() {
-        return Month_ordinal;
+    public String getPlanetName() {
+        return planetName;
     }
 
-    public void setMonth_ordinal(int month_ordinal) {
-        this.Month_ordinal = month_ordinal;
+    public void setPlanetName(String planetName) {
+        this.planetName = planetName;
     }
 
-    public String getNorthern_season() {
-        return Northern_season;
+    public String getPlanetCode() {
+        return planetCode;
     }
 
-    public void setNorthern_season(String northern_season) {
-        this.Northern_season = northern_season;
+    public void setPlanetCode(String planetCode) {
+        this.planetCode = planetCode;
     }
-//  Pre pre;
-  //  Wd wd;
 }
