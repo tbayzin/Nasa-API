@@ -8,9 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PlanetController {
 
-    private final PlanetRepository planetRepository;
 
 
+
+
+
+
+//    private final PlanetRepository planetRepository;
+
+/*
     @RequestMapping("/planets")
     public String getAuthors(Model model) {
 
@@ -20,7 +26,7 @@ public class PlanetController {
 
 
     }
-
+*/
 
 
 }
