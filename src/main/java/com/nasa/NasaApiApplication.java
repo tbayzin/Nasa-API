@@ -14,6 +14,9 @@ import java.util.Date;
 @EnableScheduling
 public class NasaApiApplication {
 
+    private final static int MINUTE = 60 * 1000;
+
+
     public static void main(String[] args) {
         SpringApplication.run(NasaApiApplication.class, args);
     }
@@ -21,13 +24,13 @@ public class NasaApiApplication {
 
     CallRestService callRestService = new CallRestService();
 
-        @Scheduled(fixedRate = 60 * 60 *1000) public void checkEndpointTimer()
-        {
-            try {
-                callRestService.run();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+    @Scheduled(fixedRate = MINUTE * 60)
+    public void checkEndpointTimer() {
+        try {
+            callRestService.run();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+    }
 
 }

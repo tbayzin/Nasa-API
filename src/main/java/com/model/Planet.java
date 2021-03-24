@@ -10,6 +10,7 @@ public class Planet {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column
     private String planetName;
     private String planetCode;
 
