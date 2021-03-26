@@ -4,13 +4,14 @@ import org.springframework.data.annotation.Id;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "Planet")
 public class Planet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
+    @Column (length =  4000)
     private String planetName;
     private String planetCode;
 
