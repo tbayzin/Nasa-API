@@ -16,7 +16,7 @@ public class CallRestService implements CommandLineRunner {
         HashMap<String, Object> planet = restTemplate.getForObject ("https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0/",HashMap.class);
 
         // Verilen objedeki numarayı alır
-        System.out.println("Gezegenler " + planet.get("821"));
+        System.out.println("Gezegenler " + planet.get("834"));
 
 
 
