@@ -24,7 +24,7 @@ public class NasaApiApplication {
 
     CallRestService callRestService = new CallRestService();
 
-    @Scheduled(fixedRate = MINUTE * 60)
+    @Scheduled(fixedRate = 60 * 60 *10)
     public void checkEndpointTimer() {
         try {
             callRestService.run();
